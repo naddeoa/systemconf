@@ -1,0 +1,45 @@
+# brew
+cmd({"os": "ubuntu"}) brew: install -- echo | ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+cmd({"os": "ubuntu"}) brew: uninstall -- sudo rm -f $(which brew)
+cmd({"os": "ubuntu"}) brew: isInstalled -- which brew
+
+
+# brew packages
+brew toilet: toilet
+
+# Error lines
+iiii
+git foobar: https://no.second.arg.com
+
+# new git command
+git oh-my-zsh: https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
+git vundle: https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+git powerlevel9k: https://github.com/bhilburn/powerlevel9k.git ~/.oh-my-zsh/custom/themes/powerlevel9k
+
+
+
+# apt packages
+apt({"os":"ubuntu"}) essentials: git vim vim-gnome zsh mosh
+
+apt({"os":"ubuntu"}) ui_stuff: xautomation xbindkeys autokey-gtk xclip xloadimage gnome-tweak-tool
+
+apt({"os":"ubuntu"}) tools: silversearcher-ag tmux gnome-disk-utility cryptsetup software-properties-common apt-file scdaemon
+
+apt({"os":"ubuntu"}) yubikey: yubikey-neo-manager yubikey-personalization libpam-yubico
+
+apt({"os":"ubuntu"}) build: cmake build-essential python-dev python3-dev exuberant-ctags par dconf-editor libterm-readkey-perl
+
+# symlinks
+symlink vimrc: ~/linux-dotfiles/files/.vimrc ~/.vimrc
+symlink gitconfig: ~/linux-dotfiles/files/.gitconfig ~/.gitconfig
+symlink gitignore: ~/linux-dotfiles/files/.gitignore ~/.gitignore
+symlink tmux.conf: ~/linux-dotfiles/files/.tmux.conf ~/.tmux.conf
+symlink vim_ftplugin: ~/linux-dotfiles/files/ftplugin ~/.vim/ftplugin
+symlink vim_syntax: ~/linux-dotfiles/files/syntax ~/.vim/syntax
+symlink xbindkeysrc: ~/linux-dotfiles/files/.xbindkeysrc ~/.xbindkeysrc
+symlink zshrc: ~/linux-dotfiles/files/.zshrc ~/.zshrc
+symlink({"os": "ubuntu"}) platform_zshrc: ~/linux-dotfiles/files/.zshrc_ubuntu ~/.zshrc_platform
+symlink({"os": "elementary"}) platform_zshrc: ~/linux-dotfiles/files/.zshrc_elementary ~/.zshrc_platform
+symlink({"os": "osx"}) platform_zshrc: ~/linux-dotfiles/files/.zshrc_mac ~/.zshrc_platform
+symlink ssh_config: ~/linux-dotfiles/files/ssh_config ~/.ssh/config
+symlink toprc: ~/linux-dotfiles/files/.toprcf ~/.toprc
