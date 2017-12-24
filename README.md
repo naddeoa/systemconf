@@ -34,7 +34,7 @@ apt({"os":"ubuntu"}) essentials: git vim vim-gnome zsh mosh
 symlink vimrc: ~/linux-dotfiles/files/.vimrc ~/.vimrc
 ```
 
-The actual grammer is the `.pegjs` file in this repo. Generally, each line is
+The actual grammar is the `.pegjs` file in this repo. Generally, each line is
 composed of the following
 
     <command name>({<optional json predicate>}) <program name>: <stuff passed to the command parser>
