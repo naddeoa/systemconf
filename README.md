@@ -1,3 +1,6 @@
+
+This project is discontinued in favor of https://github.com/naddeoa/booty
+
 # Systemconf (alpha quality)
 
 Systemconf is a system of managing installations on a computer. The motivation
